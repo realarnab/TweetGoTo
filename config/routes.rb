@@ -15,10 +15,12 @@ Rails.application.routes.draw do
 
   # GET /about
   # get "/about", to: "about#index"
-  get "about-us", to: "about#index", as: :about # URL /about-us that maps to the index action of the AboutController
+  get "about", to: "about#index", as: :about # URL /about-us that maps to the index action of the AboutController
   # about refers to the AboutController and index refers to the index method of AboutController class
 
-  get "sign_up", to: "registraions#new"
+  get "sign-up", to: "registrations#new"
+
+  post "sign-up", to: "registrations#create"
 
   # get "/", to: "main#index"
   root to: "main#index" # this is the root route and mapped to the MainController
