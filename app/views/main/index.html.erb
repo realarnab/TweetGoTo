@@ -1,3 +1,6 @@
 <div class="d-flex allign-items-center justify-content-center">
     <h1>Welcome to scheduled Tweets</h1>
+    <% if @user %>
+        <%= @user.email%>
+    <% end %>
 </div>
