@@ -1,6 +1,8 @@
 <div class="d-flex allign-items-center justify-content-center">
     <h1>Welcome to scheduled Tweets</h1>
-    <% if @user %>
-        <%= @user.email%>
-    <% end %>
 </div>
+<% if @user %>
+    <%= @user.email%>
+    <%# <%= link_to "Logout", logout_path, method: :delete %> 
+    <%= button_to "Logout", logout_path, method: :delete%>
+<% end %>
