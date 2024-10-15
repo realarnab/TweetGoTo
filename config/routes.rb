@@ -27,6 +27,9 @@ Rails.application.routes.draw do
 
   delete "logout", to: "sessions#destroy"
 
+  get "password", to: "passwords#edit", as: :edit_password
+  patch "password", to: "passwords#update"
+
   # get "/", to: "main#index"
   root to: "main#index" # this is the root route and mapped to the MainController
 end
