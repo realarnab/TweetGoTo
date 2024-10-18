@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#new"
   patch "password/reset/edit", to: "password_resets#update"
 
+  get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+
+  resources :twitter_accounts
+
   # get "/", to: "main#index"
   root to: "main#index" # this is the root route and mapped to the MainController
 end
