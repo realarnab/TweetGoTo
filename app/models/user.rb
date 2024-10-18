@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :twitter_accounts
   has_secure_password # to BCrypt the password
 
   validates :email, presence: true, uniqueness: true# to validate the email field
