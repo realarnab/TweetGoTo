@@ -1,8 +1,4 @@
 <div class="d-flex allign-items-center justify-content-center">
     <h1>Welcome to scheduled Tweets</h1>
 </div>
-<% if @user %>
-    <%= @user.email%>
-    <%# <%= link_to "Logout", logout_path, method: :delete %> 
-    <%= button_to "Logout", logout_path, method: :delete%>
-<% end %>
+<%= button_to "Connect Twitter", "/auth/twitter", data: {turbo: "false"}, method: :post %>
