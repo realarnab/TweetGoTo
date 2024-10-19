@@ -1,0 +1,22 @@
+<%= form_with model: tweet do |form| %>
+    <%= render "shared/form_error", form: form %>
+    <div class="mb-3"> 
+        <%= form.label :twitter_account_id, "Select Twitter Account" %>
+        <%= form.collection_select :twitter_account_id, Current.user.twitter_accounts, :id, :username, { prompt: "Choose an account" }, { class: "form-control" } %>
+        <%= link_to "Connect your Twitter Account", "/auth/twitter", data: {turbo: "false"}, method: :post, class: "btn btn-primary mt-3"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :publish_at %>
+        <div class="form-control" >
+            <%= form.datetime_select :publish_at %>
+        </div>
+    </div>
+    <%= form.button "Schedule", class: "btn btn-primary" %>
+    <% if form.object.persisted? %>
+        <%=  link_to "Delete", form.object, data: {turbo_confirm: 'Are you sure?', "turbo-method": :delete}, class:"btn btn-outline-danger" %>
+    <% end %>
+<% end %>
