@@ -1,7 +1,8 @@
 class OmniauthCallbacksController < ApplicationController
   def twitter
-    # Current.user.twitter_accounts.create(
+    # checks that wheather the same user name is already exists or not/ if exists first_or_initialize will retrive the account, if not it will initialize a new object
     twitter_account = Current.user.twitter_accounts.where(username: auth.info.nickname).first_or_initialize
+    # saves the all attributes in the object
     twitter_account.update(
       name: auth.info.name,
       username: auth.info.nickname,
@@ -12,6 +13,7 @@ class OmniauthCallbacksController < ApplicationController
     redirect_to twitter_accounts_path, notice: "successfully connect your twitter"
   end
 
+  # this have the all the data return by the twitter
   def auth
     request.env["omniauth.auth"]
   end
@@ -32,7 +34,7 @@ end
 # #       name: auth.info.name,
 # #       username: auth.info.nickname,
 # #       image: auth.info.image,
-# #       token: auth.credentials.token, # Corrected from 'tokrn' to 'token'
+# #       token: auth.credentials.token,
 # #       secret: auth.credentials.secret
 # #     )
 # #       # Log success
