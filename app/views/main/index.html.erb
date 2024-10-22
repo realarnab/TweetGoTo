@@ -1,4 +1,65 @@
-<div class="d-flex allign-items-center justify-content-center">
-    <h1>Welcome to scheduled Tweets</h1>
+<div class="container text-center mt-5">
+  <div class="d-flex align-items-center justify-content-center">
+    <h1 class="display-4 mb-4">Welcome to TweetGoTo</h1>
+  </div>
+
+  <p class="lead mb-4">
+    Your one-stop solution for managing your Twitter presence effortlessly! 
+    With TweetGoTo, you can schedule tweets, manage multiple accounts, and engage with your audience like never before.
+  </p>
+
+  <%= button_to "Connect Twitter", "/auth/twitter", data: { turbo: "false" }, method: :post, class: "btn btn-primary btn-lg mb-4" %>
+
+  <h2 class="mt-5">Why Choose TweetGoTo?</h2>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://buffer.com/static/twitter/webp/publish-twitter.webp" class="card-img-top" alt="Feature 1">
+        <div class="card-body">
+          <h5 class="card-title">Schedule Your Tweets</h5>
+          <p class="card-text">Plan your content ahead of time and reach your audience when they're most active.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://buffer.com/static/twitter/webp/engagement-twitter.webp" class="card-img-top" alt="Feature 2">
+        <div class="card-body">
+          <h5 class="card-title">Manage Multiple Accounts</h5>
+          <p class="card-text">Easily switch between accounts and manage all your Twitter profiles in one place.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://buffer.com/static/twitter/webp/analytics-twitter.webp" class="card-img-top" alt="Feature 3">
+        <div class="card-body">
+          <h5 class="card-title">Engage with Your Audience</h5>
+          <p class="card-text">Monitor your interactions and respond to followers seamlessly from your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h2>Join Us Today!</h2>
+    <p>
+      Start maximizing your Twitter experience with TweetGoTo. 
+      Connect your account now and take the first step towards effortless social media management.
+    </p>
+    <%= button_to "Connect Twitter", "/auth/twitter", data: { turbo: "false" }, method: :post, class: "btn btn-success btn-lg" %>
+  </div>
 </div>
-<%= button_to "Connect Twitter", "/auth/twitter", data: {turbo: "false"}, method: :post %>
+
+<style>
+  body {
+    background-color: #f8f9fa; /* Light background color */
+  }
+  .card {
+    border: none; /* No border for cards */
+    transition: transform 0.3s; /* Smooth transform effect */
+  }
+  .card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }
+</style>
