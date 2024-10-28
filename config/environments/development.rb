@@ -80,4 +80,20 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   config.action_mailer.default_url_options = { host: "localhost:3000" }
+
+  config.active_job.queue_adapter = :sidekiq
+
+  # config/environments/development.rb
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              "smtp.gmail.com",
+  port:                 587,
+  user_name:            "email.sending.pro@gmail.com",
+  password:             "jncygvuqupbaldwy",
+  authentication:       "plain",
+  enable_starttls_auto: true
+  }
+
+  # Use the host URL (replace with your development/production URL)
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 end
