@@ -72,6 +72,6 @@ gem "twitter", "~> 8.0"
 
 gem "sidekiq", "~> 7.3"
 
-gem "redis", "~> 5.3"
+gem "redis", "~> 5.4"
 
 gem "x", "~> 0.14.1"
